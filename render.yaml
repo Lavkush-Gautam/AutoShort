@@ -18,8 +18,9 @@ services:
 
   - type: web
     name: autoshort-frontend
-    env: static
-    buildCommand: "cd frontend && npm install && npm run build"
+    env: node
+    buildCommand: "cd frontend && npm ci && npm run build"
+    startCommand: "npm start"
     staticPublishPath: frontend/dist
     envVars:
       - key: VITE_API_URL
